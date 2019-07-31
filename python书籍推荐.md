@@ -12,7 +12,7 @@
 6. Web Scraping with Python, 2nd Edition
 7. 深度学习入门：基于Python的理论与实现_中文版
 8. Python机器学习基础教程
-9. 机器学习实战：基于Scikit-Learn和TensorFlow (O’Reilly精品图书系列)
+9. 机器学习实战：基于Scikit-Learn和TensorFlow (O’Reilly精品图书系列) | 
    OReilly.Hands-On.Machine.Learning.with.Scikit-Learn.and.TensorFlow
 10. python cookbook(第3版)
 11. 流畅的Python
