@@ -41,19 +41,9 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
 参考 https://mirrors.tuna.tsinghua.edu.cn/help/pypi/
 
 ```
-#临时使用
+## 临时使用
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
 
-设为默认
-修改
-
-~/.config/pip/pip.conf (Linux)
-
-%APPDATA%\pip\pip.ini (Windows 10) 或 
-
-$HOME/Library/Application Support/pip/pip.conf (macOS) (没有就创建一个)，
-
-修改 index-url至tuna，例如
-[global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-```
+### 设为默认(pip 10版本以后)
+pip install pip -U
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
