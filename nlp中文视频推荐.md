@@ -1,5 +1,5 @@
 # nlp视频推荐
-摘自bilibili 吴恩达，李宏毅
+摘自bilibili 吴恩达，李宏毅，包含常见nlp模型：
 
 ## 1. one-hot
 ## 2. word2vector
