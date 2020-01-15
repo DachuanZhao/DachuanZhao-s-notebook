@@ -1,0 +1,11 @@
+```
+#删除已经安装版本
+rpm -qa | grep openjdk | xargs  yum -y remove
+yum -y update
+
+#安装java8
+yum install java-1.8.0-openjdk
+
+#安装java11
+yum install java-11-openjdk.x86_64
+```
