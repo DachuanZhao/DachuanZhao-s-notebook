@@ -1,5 +1,6 @@
 ```
 #删除已经安装版本
+sudo update-alternatives --config java
 rpm -qa | grep jdk | xargs  yum -y remove
 rpm -qa | grep java | xargs  sudo yum -y remove
 rpm -qa | grep jre | xargs  sudo yum -y remove
