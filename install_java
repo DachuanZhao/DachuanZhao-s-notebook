@@ -1,6 +1,9 @@
 ```
 #删除已经安装版本
-rpm -qa | grep openjdk | xargs  yum -y remove
+rpm -qa | grep jdk | xargs  yum -y remove
+rpm -qa | grep java | xargs  sudo yum -y remove
+rpm -qa | grep jre | xargs  sudo yum -y remove
+
 yum -y update
 
 #安装java8
