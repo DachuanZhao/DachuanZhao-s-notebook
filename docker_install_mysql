@@ -1,0 +1,29 @@
+```
+# 拉取 mysql 5.7
+docker pull mysql:5.7   
+
+ # 拉取最新版mysql镜像
+docker pull mysql      
+
+#检查是否拉取成功
+docker mysql
+
+# –name：容器名，此处命名为mysql
+# -e：配置信息，此处配置mysql的root用户的登陆密码
+# -p：端口映射，此处映射 主机3306端口 到 容器的3306端口
+# -d：源镜像名，此处为 mysql:5.7
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql
+
+# 检查容器是否正确运行
+docker container ls
+
+# 进入docker本地连接mysql客户端
+docker exec -it mysql bash
+mysql -uroot -p123456
+
+# mysql建库
+create database c_db default character set utf8mb4 collate utf8mb4_unicode_ci;
+
+# 拷贝文件
+docker cp /opt/a.sql mysql:/tmp/
+```
