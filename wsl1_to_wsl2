@@ -31,4 +31,7 @@ sudo apt-get update
 
 #安装docker
 sudo apt install docker-ce
+
+#随系统启动
+sudo systemctl enable docker.service
 ```
