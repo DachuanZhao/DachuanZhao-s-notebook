@@ -33,6 +33,7 @@
 ##### 5.软件工程-实践者的研究方法
 ##### 6.SQL必知必会
 ##### 7.高性能mysql
+##### 8.Spark快速大数据分析
 
 ### 当然，最最重要的，百度网盘链接：
 链接：https://pan.baidu.com/s/1NWzvC3TORGMk30x-55cLAA 
