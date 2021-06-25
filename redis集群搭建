@@ -1,0 +1,12 @@
+```Bash
+sudo docker create --name redis-node1 --net host -v /datas/redis-data/node1:/data redis:5.0.12 --cluster-enabled yes --cluster-config-file nodes-node-1.conf --port 7001
+sudo docker create --name redis-node2 --net host -v /datas/redis-data/node2:/data redis:5.0.12 --cluster-enabled yes --cluster-config-file nodes-node-2.conf --port 7002
+sudo docker create --name redis-node3 --net host -v /datas/redis-data/node3:/data redis:5.0.12 --cluster-enabled yes --cluster-config-file nodes-node-3.conf --port 7003
+sudo docker start redis-node1 redis-node2 redis-node3
+sudo docker exec -it redis-node1 /bin/bash
+```
+
+```
+redis-cli --cluster create 公网ip:7001  公网ip:7002  公网ip:7003 --cluster-replicas 0
+#yes
+```
