@@ -40,7 +40,7 @@ mkdir /datas/redis-data;cd /datas/redis-data
 ```
 
 ```
-vim vim redis-cluster2.tmpl
+vim redis-cluster2.tmpl
 ```
 
 ```
@@ -97,7 +97,7 @@ done
 sudo docker network create redis-net
 sudo bash createRedisCluster2.sh
 sudo bash createDocker.sh
-sudo docker exec -it redis-node1 /bin/bash
+sudo docker exec -it redis-7001 /bin/bash
 ```
 
 ```
