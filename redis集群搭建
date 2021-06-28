@@ -33,3 +33,74 @@ sudo docker exec -it redis-node1 /bin/bash
 ```
 redis-cli --cluster create 0.0.0.0:7001  0.0.0.0:7002  0.0.0.0:7003  0.0.0.0:7004  0.0.0.0:7005  0.0.0.0:7006   --cluster-replicas 1
 ```
+
+## 外网可访问：
+```
+mkdir /datas/redis-data;cd /datas/redis-data
+```
+
+```
+vim vim redis-cluster2.tmpl
+```
+
+```
+##设置外部网络连接redis服务，默认是yes，即开启。开启protected-mode保护模式，需配置bind ip或者设置访问密码，关闭protected-mode模式，此时外部网络可以直接访问
+protected-mode no
+##节点端口
+port ${PORT}
+##指定redis是否要用守护线程的方式启动，默认no
+daemonize no
+##持久化模式
+appendonly yes
+##cluster集群模式
+cluster-enabled yes
+##集群配置名
+cluster-config-file nodes.conf
+##超时时间
+cluster-node-timeout 15000
+##实际为各节点网卡分配ip
+cluster-announce-ip 公网ip
+##节点映射端口
+cluster-announce-port ${PORT}
+##节点总线端
+cluster-announce-bus-port 1${PORT}
+```
+
+```
+vim createDocker.sh
+```
+
+```
+for port in `seq 7001 7006`; do
+  docker run -p ${port}:${port} -p 1${port}:1${port} --name redis-${port} \
+  -v /datas/redis-data/${port}/conf/redis.conf:/usr/local/etc/redis/redis.conf \
+  -v /datas/redis-data/${port}/data:/data --name redis-${port} --net redis-net -d  redis:6.2.4  redis-server /usr/local/etc/redis/redis.conf;
+done
+```
+
+```
+vim createRedisCluster2.sh
+```
+
+
+```
+for port in `seq 7001 7006`; do \
+  base=6999 \
+  && ip=$[port-base] \
+  && mkdir -p ${port}/conf \
+  && PORT=${port} TEMP=${ip} envsubst < redis-cluster2.tmpl > ${port}/conf/redis.conf \
+  && mkdir -p ${port}/data;\
+done
+```
+
+```
+sudo docker network create redis-net
+sudo bash createRedisCluster2.sh
+sudo bash createDocker.sh
+sudo docker exec -it redis-node1 /bin/bash
+```
+
+```
+redis-cli --cluster create 公网ip:7001  公网ip:7002  公网ip:7003  公网ip:7004  公网ip:7005  公网ip:7006   --cluster-replicas 1
+```
+
