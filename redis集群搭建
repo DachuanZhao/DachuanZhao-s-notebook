@@ -26,8 +26,8 @@ sudo docker create --name redis-7006 --net host -v /datas/redis-data/node6:/data
 #--cluster-config-file 配置文件.conf ：指定节点信息，自动生成
 #--cluster-node-timeout 毫秒值： 配置节点连接超时时间
 #--appendonly：是否开启持久化，选值：yes、no
-sudo docker start redis-node1 redis-node2 redis-node3 redis-node4 redis-node5 redis-node6
-sudo docker exec -it redis-node1 /bin/bash
+sudo docker start redis-7001 redis-7002 redis-7003 redis-7004 redis-7005 redis-7006
+sudo docker exec -it redis-7001 /bin/bash
 ```
 
 ```
