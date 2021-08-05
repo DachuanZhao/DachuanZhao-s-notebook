@@ -9,7 +9,7 @@ sudo docker exec -it redis-node1 /bin/bash
 ```
 
 ```
-redis-cli --cluster create 0.0.0.0:7001  0.0.0.0:7002  0.0.0.0:7003 --cluster-replicas 0
+redis-cli --cluster create 公网ip:7001  公网ip:7002  公网ip:7003 --cluster-replicas 0
 #yes
 ```
 
@@ -31,7 +31,7 @@ sudo docker exec -it redis-7001 /bin/bash
 ```
 
 ```
-redis-cli --cluster create 0.0.0.0:7001  0.0.0.0:7002  0.0.0.0:7003  0.0.0.0:7004  0.0.0.0:7005  0.0.0.0:7006   --cluster-replicas 1
+redis-cli --cluster create 公网ip:7001  公网ip:7002  公网ip:7003  公网ip:7004  公网ip:7005  公网ip:7006   --cluster-replicas 1
 ```
 
 ## 外网可访问：
