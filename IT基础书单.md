@@ -16,14 +16,14 @@
 ### 1、C++
 #### 《C++ Primer(中文版)(第5版)》(轮子哥)
 #### 《Effective Modern C++:改善C++11和C++14的42个具体做法(影印版)(英文版)》(Scott Meyers)
-### 2、C#
-#### 《NET CLR via C#(第4版)》
-### 3、JAVA
+### 2、JAVA
 #### 《Java编程思想(第4版)》(埃史尔)
-### 4、python
+### 3、python
 #### 我的主力语言，另维护
-### 5、Javascript
+### 4、Javascript
 #### 《JavaScript入门经典 第5版》
+
+### 5其他语言go c#等均不推荐
 
 ## 三、工程架构类
 #### 软件工程-实践者的研究方法第八版
